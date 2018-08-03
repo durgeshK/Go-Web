@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+  {{range $key, $value := .}}
+
+    <h2>Hotels in {{$key}} region:</h2>
+
+    <table>
+      <thead>
+        <th>Hotel Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Zip</th>
+      </thead>
+      {{range $value}}
+      <tr>
+        <td>{{.Name}}</td>
+        <td>{{.Address}}</td>
+        <td>{{.City}}</td>
+        <td>{{.Zip}}</td>
+      </tr>
+      {{end}}
+    </table>
+
+  <!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
+
+  {{end}}
+
+</body>
+</html>

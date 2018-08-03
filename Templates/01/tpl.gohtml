@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+{{range .}}
+  <h1>
+    Academic Year :{{.AcaYear}}
+  </h1>
+
+  <h3>
+    Fall Semester:<br/>
+  </h3>
+  <table>
+    <thead>
+      <th>Course Number</th>
+      <th>Course Name</th>
+      <th>Units</th>
+    </thead>
+    {{range .Fall.Courses}}
+    <tr>
+      <td>{{.Number}}</td>
+      <td>{{.Name}}</td>
+      <td>{{.Units}}</td>
+    </tr>
+    {{end}}
+  </table>
+
+  <h3>
+    Spring Semester:<br/>
+  </h3>
+  <table>
+    <thead>
+      <th>Course Number</th>
+      <th>Course Name</th>
+      <th>Units</th>
+    </thead>
+    {{range .Spring.Courses}}
+    <tr>
+      <td>{{.Number}}</td>
+      <td>{{.Name}}</td>
+      <td>{{.Units}}</td>
+    </tr>
+    {{end}}
+  </table>
+
+  {{if .Summer.Term}}
+  <h3>
+    Summer Semester:<br/>
+  </h3>
+  <table>
+    <thead>
+      <th>Course Number</th>
+      <th>Course Name</th>
+      <th>Units</th>
+    </thead>
+    {{range .Summer.Courses}}
+    <tr>
+      <td>{{.Number}}</td>
+      <td>{{.Name}}</td>
+      <td>{{.Units}}</td>
+    </tr>
+    {{end}}
+  </table>
+  {{end}}
+<!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
+
+{{end}}
+
+</body>
+</html>

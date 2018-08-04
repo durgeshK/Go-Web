@@ -43,7 +43,31 @@ func main() {
 		MenuItem{"Paneer Thali", "Indian Thali with Paneer gravy", 200},
 	}
 
-	err := tpl.Execute(os.Stdout, rajdhaniRestaurant)
+	italianRestaurant := new(RestaurantMenu)
+	italianRestaurant.RestaurantName = "Italina Restaurant"
+	italianRestaurant.Menu = make(map[string][]MenuItem)
+
+	italianRestaurant.Menu["Breakfast"] = []MenuItem{
+		MenuItem{"Sandwich", "Bread stuffed with Italian sauce", 150},
+		MenuItem{"Cornflakes", "Corn flakes with milk", 150},
+	}
+
+	italianRestaurant.Menu["Lunch"] = []MenuItem{
+		MenuItem{"Rissoto", "italian Khichdi", 300},
+	}
+
+	italianRestaurant.Menu["Dinner"] = []MenuItem{
+		MenuItem{"Pizza", "Pizza topped with ...", 150},
+		MenuItem{"Pasta", "Pasta with Red sauce", 200},
+	}
+
+	/*
+		restaurants := make([]RestaurantMenu, 2)
+		restaurants[0] = *rajdhaniRestaurant
+		restaurants[1] = *italianRestaurant
+	*/
+	restaurants := []RestaurantMenu{*rajdhaniRestaurant, *italianRestaurant}
+	err := tpl.Execute(os.Stdout, restaurants)
 	if err != nil {
 		log.Fatalln(err)
 	}

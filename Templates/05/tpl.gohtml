@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Part Data from CSV File</h1>
+
+<table>
+  <thead>
+    <th>Sr. No.</th>
+    <th>Date</th>
+    <th>Open</th>
+    <th>Close</th>
+  </thead>
+  {{range .}}
+  <tr>
+    <td>{{.Index}}</td>
+    <td>{{.Date}}</td>
+    <td>{{.Open}}</td>
+    <td>{{.Close}}</td>
+  </tr>
+  {{end}}
+</table>
+
+</body>
+</html>

@@ -6,6 +6,7 @@
 </head>
 <body>
 
+{{range .}}
   <h1>{{.RestaurantName}}</h1>
   {{range $key, $value := .Menu}}
 
@@ -29,6 +30,6 @@
   <!-- PUT YOUR CODE HERE TO SHOW THE DATA-->
 
   {{end}}
-
+{{end}}
 </body>
 </html>
